@@ -9,22 +9,16 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.9.5"
-  },
-  "resolutions": {
-    "rollup": "npm:@rollup/wasm-node"
-  },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/node": "^8.2.5",
     "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vercel": "^7.5.4",
+    "@astrojs/vercel": "^7.3.0",
+    "astro": "^4.3.5",
     "@auth/core": "^0.18.6",
-    "astro": "^4.5.12",
     "auth-astro": "^4.1.1",
     "lucide-astro": "^0.368.0",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.3"
+    "typescript": "^5.3.3"
   }
 }
