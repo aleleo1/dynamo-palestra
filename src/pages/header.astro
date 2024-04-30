@@ -1,0 +1,41 @@
+---
+interface Props {
+    logged: boolean;
+}
+const { logged } = Astro.props;
+---
+
+<header>
+    <div id="logged" class="hidden absolute" data-value={logged ? "1" : "0"}>
+    </div>
+    <div class="navContainer">
+        <h2 class="logo">Logo</h2>
+        <nav class="navigation">
+            {
+                logged && (
+                    <a class="cursor-pointer text-center p-2 font-normal">
+                        Profilo
+                    </a>
+                )
+            }
+            <button class="btnLogin-popup" id="btn"
+                >{logged ? "Logout" : "Login"}</button
+            >
+        </nav>
+    </div>
+    <script>
+        import { signOut } from "auth-astro/client";
+
+        const logged = document.getElementById("logged")?.getAttribute("data-value");
+        const btn = document.getElementById("btn");
+        btn!.addEventListener("click", () => {
+            console.log("click", logged)
+            if (logged === "1") {
+                signOut();
+            }
+            if(logged === "0") {
+                document.getElementsByClassName("wrapper")[0].classList.add("present")
+            }
+        });
+    </script>
+</header>

@@ -1,0 +1,48 @@
+---
+import { X, Mail, Lock } from "lucide-astro";
+---
+
+<div class="form-box login">
+    <h2>Login</h2>
+    <form method="POST" id="login">
+        <div class="input-box">
+            <span class="icon"><Mail /></span>
+            <input type="text" required name="user" />
+            <label>Mail</label>
+            <small class="EL-err">Error Message</small>
+        </div>
+        <div class="input-box">
+            <span class="icon"><Lock /></span>
+            <input type="password" required name="password" />
+            <label>Password</label>
+            <small class="PL-err">Error Message</small>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <small class="FL-err">Something went wrong</small>
+        <div class="login-register">
+            <p>
+                Don't have an account?<a href="#" class="register-link">
+                    Register
+                </a>
+            </p>
+        </div>
+    </form>
+    <script>
+        import { signIn } from "auth-astro/client";
+
+        document
+            .getElementById("login")!
+            .addEventListener("submit", async (event) => {
+                event.preventDefault();
+                const formData = new FormData(event.target);
+                console.log(formData)
+                await signIn(
+                    "credentials",
+                    {},
+                    new URLSearchParams(
+                        Object.fromEntries(formData) as Record<string, string>,
+                    ),
+                );
+            });
+    </script>
+</div>

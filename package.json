@@ -1,0 +1,23 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/node": "^8.2.5",
+    "@astrojs/tailwind": "^5.1.0",
+    "@auth/core": "^0.18.6",
+    "astro": "^4.5.12",
+    "auth-astro": "^4.1.1",
+    "lucide-astro": "^0.368.0",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.3"
+  }
+}

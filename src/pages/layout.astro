@@ -1,0 +1,25 @@
+---
+import { getSession } from "auth-astro/server";
+import Header from "./header.astro";
+import "../feed.css";
+import "../index.css";
+import "../post.css";
+//console.log(await Astro.request.formData().catch(err => console.log(err)));
+const session = await getSession(Astro.request);
+//console.log(session)
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--  <script src="../js/landing.ts"></script> -->
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <Header logged={session ? true : false} />
+        <slot />
+        <footer>Footer</footer>
+    </body>
+</html>

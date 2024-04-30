@@ -1,0 +1,99 @@
+---
+import { X, Mail, Lock } from "lucide-astro";
+import Layout from "./layout.astro";
+import Login from "../components/login.astro";
+---
+
+<Layout>
+	<!-- 		<header>
+			<div class="navContainer">
+				<h2 class="logo">Logo</h2>
+				<nav class="navigation">
+					<a class="cursor-pointer text-center p-2 font-normal"
+						>Profilo</a
+					>
+					<button class="btnLogin-popup">Login</button>
+				</nav>
+			</div>
+		</header> -->
+
+	<div class="wrapper">
+		<script>
+			const wrapper = document.querySelector(".wrapper")!;
+			const loginLink = document.querySelector(".login-link")!;
+			const registerLink = document.querySelector(".register-link")!;
+			const iconClose = document.querySelector(".icon-close")!;
+			loginLink.addEventListener("click", () => {
+				wrapper.classList.remove("active");
+			});
+			registerLink.addEventListener("click", () => {
+				wrapper.classList.add("active");
+			});
+			iconClose.addEventListener("click", () => {
+				if (wrapper) wrapper.classList.remove("present");
+			});
+		</script>
+		<span class="icon-close"><X /></span>
+		<Login />
+		<!-- <div class="form-box login">
+			<h2>Login</h2>
+			<form method="POST">
+				<div class="input-box">
+					<span class="icon"><Mail /></span>
+					<input type="text" required name="user" />
+					<label>Mail</label>
+					<small class="EL-err">Error Message</small>
+				</div>
+				<div class="input-box">
+					<span class="icon"><Lock /></span>
+					<input type="password" required name="password" />
+					<label>Password</label>
+					<small class="PL-err">Error Message</small>
+				</div>
+				<button type="submit" class="btn">Login</button>
+				<small class="FL-err">Something went wrong</small>
+				<div class="login-register">
+					<p>
+						Don't have an account?<a href="#" class="register-link">
+							Register
+						</a>
+					</p>
+				</div>
+			</form>
+		</div>
+ -->
+		<div class="form-box register">
+			<h2>Registration</h2>
+			<form method="POST" name="registration">
+				<div class="input-box">
+					<span class="icon"><Mail /></span>
+					<input type="text" required name="r_user" />
+					<label>Mail</label>
+					<small class="E-err">Error Message</small>
+				</div>
+				<div class="input-box">
+					<span class="icon"><Lock /></span>
+					<input type="password" required name="r_password" />
+					<label>Password</label>
+					<small class="P-err">Error Message</small>
+				</div>
+				<div class="input-box">
+					<span class="icon"><Lock /></span>
+					<input type="password" required name="repeat_password" />
+					<label>Repeat Password</label>
+					<small class="Rp-err">Error Message</small>
+				</div>
+				<button type="submit" class="btn-register">Register</button>
+				<small class="F-err">Something went wrong</small>
+				<div class="login-register">
+					<p>
+						Already have an account?<a href="#" class="login-link">
+							Login
+						</a>
+					</p>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</Layout>
