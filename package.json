@@ -12,6 +12,9 @@
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.9.5"
   },
+  "resolutions": {
+    "rollup": "npm:@rollup/wasm-node"
+  },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/node": "^8.2.5",
