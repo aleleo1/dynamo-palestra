@@ -161,7 +161,6 @@ header {
     transform: scale(1);
     transition: .18s ease;
     display: block !important;
-    animation-fill-mode: forwards;
 }
 
 .wrapper.active {
@@ -211,6 +210,14 @@ header {
 .wrapper.active .form-box.register {
     transform: translateX(0);
     transition: transform .18s ease;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    display: none;
 }
 
 

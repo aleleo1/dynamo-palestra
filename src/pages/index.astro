@@ -5,6 +5,25 @@ import Login from "../components/login.astro";
 ---
 
 <Layout>
+	<script>
+		const wrapper = document.querySelector(".wrapper")!;
+		const loginLink = document.querySelector(".login-link")!;
+		const registerLink = document.querySelector(".register-link")!;
+		const iconClose = document.querySelector(".icon-close")!;
+		loginLink.addEventListener("click", () => {
+			wrapper.classList.remove("active");
+			document.getElementById("login-form")!.classList.remove("hidden");
+		});
+		registerLink.addEventListener("click", () => {
+			wrapper.classList.add("active");
+			document.getElementById("login-form")!.classList.add("hidden");
+		});
+		iconClose.addEventListener("click", () => {
+			console.log("closing");
+			wrapper.classList.remove("present");
+			wrapper.classList.remove("active");
+		});
+	</script>
 	<!-- 		<header>
 			<div class="navContainer">
 				<h2 class="logo">Logo</h2>
@@ -18,21 +37,6 @@ import Login from "../components/login.astro";
 		</header> -->
 
 	<div class="wrapper">
-		<script>
-			const wrapper = document.querySelector(".wrapper")!;
-			const loginLink = document.querySelector(".login-link")!;
-			const registerLink = document.querySelector(".register-link")!;
-			const iconClose = document.querySelector(".icon-close")!;
-			loginLink.addEventListener("click", () => {
-				wrapper.classList.remove("active");
-			});
-			registerLink.addEventListener("click", () => {
-				wrapper.classList.add("active");
-			});
-			iconClose.addEventListener("click", () => {
-				if (wrapper) wrapper.classList.remove("present");
-			});
-		</script>
 		<span class="icon-close"><X /></span>
 		<Login />
 		<!-- <div class="form-box login">
@@ -62,7 +66,7 @@ import Login from "../components/login.astro";
 			</form>
 		</div>
  -->
-		<div class="form-box register">
+		<div id="register-box" class="form-box register">
 			<h2>Registration</h2>
 			<form method="POST" name="registration">
 				<div class="input-box">
@@ -95,5 +99,4 @@ import Login from "../components/login.astro";
 			</form>
 		</div>
 	</div>
-
 </Layout>
