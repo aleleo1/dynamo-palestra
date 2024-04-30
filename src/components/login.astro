@@ -34,7 +34,7 @@ import { X, Mail, Lock } from "lucide-astro";
             .getElementById("login")!
             .addEventListener("submit", async (event) => {
                 event.preventDefault();
-                const formData = new FormData(event.target);
+                const formData = new FormData(event.target as any);
                 console.log(formData)
                 await signIn(
                     "credentials",
