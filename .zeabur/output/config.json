@@ -1,9 +1,0 @@
-{
-	"routes": [
-		{
-			"src": ".*",
-			"dest": "/__astro"
-		}
-	],
-	"containerized": false
-}
